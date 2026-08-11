@@ -49,4 +49,4 @@ You are free to use, modify, and distribute the code, provided you retain the or
 
 ## 📧 Contact
 
-For questions about specific scripts, please contact [your-email@example.com] or open an issue in this repository.
+For questions about specific scripts, please contact [lin_jinkang@163.com] or open an issue in this repository.
