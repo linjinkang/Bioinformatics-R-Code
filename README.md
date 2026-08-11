@@ -54,7 +54,3 @@ Please refer to the “Data Availability” section of the relevant paper for da
 
 This repository is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.  
 You are free to use, modify, and distribute the code, provided you retain the original copyright notice.
-
-## 📧 Contact
-
-For questions about specific scripts, please contact [lin_jinkang@163.com] or open an issue in this repository.
