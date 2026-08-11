@@ -1,28 +1,27 @@
-# Bioinformatics R Scripts
+# bioinformatics-R-scripts
 
-This repository contains the **R scripts** used for the bioinformatics analyses in our published [or submitted] SCI papers.  
-It serves as the permanent code reference for the **Data Availability** section, ensuring full reproducibility of our computational results.
+This repository contains the **R scripts** used for the bioinformatics analyses in our published SCI papers.  
+All scripts are collected here to serve as the permanent code reference for the **Data Availability** section, ensuring full computational reproducibility.
 
-## Repository Structure
+## 📁 Repository Structure
 
-Each paper has its own subfolder, named as `Journal_Year_Keyword`:
+To keep things simple, all R scripts are placed directly in the root directory.  
+Each script is named with a short identifier linking it to the corresponding paper (e.g., `2024_BreastCancer_DEG.R`).  
+If a script is used across multiple papers, it is clearly noted in its header comment.
 
-- `CancerCell_2024_Immunotherapy/`  
-  Scripts for differential expression and immune infiltration analysis.
-- `GenomeBiology_2023_scRNAseq/`  
-  Scripts for single-cell RNA-seq processing and visualization.
+## 📜 List of Scripts & Associated Papers
 
-## How to Use
+| Script file | Paper (short reference) | Key analysis |
+|-------------|------------------------|--------------|
+| `2024_BreastCancer_DEG.R` | Breast cancer prognosis model (2024) | Differential expression, survival analysis |
+| `2023_scRNAseq_clustering.R` | Single-cell atlas of lung cancer (2023) | Seurat clustering, marker identification |
+| `2022_TCGA_methylation.R` | Pan-cancer methylation study (2022) | Methylation 450K array preprocessing |
+| *(add your own rows)* | | |
 
-1. Clone the repository:  
-   `git clone https://github.com/yourusername/bioinformatics-R-scripts.git`
-2. Navigate to the specific paper's folder.
-3. Run the R scripts in order as described in the paper's Methods section.
+> **Note:** If a script belongs to multiple papers, it is listed under each relevant paper with a note in the file header.
 
-## Citation
+## 🚀 How to Use
 
-If you use these scripts in your research, please cite the corresponding paper [DOI/link to be added].
-
-## Data Availability
-
-The raw data analyzed in these scripts are available from the original sources stated in each study's Data Availability section.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/bioinformatics-R-scripts.git
