@@ -34,7 +34,6 @@ Commonly used packages across the scripts include:
 ## 📝 Citation
 
 If you use these scripts in your research, **please cite the corresponding original paper(s)**.  
-The full citation information (authors, title, journal, DOI) is provided in the header comment of each individual script file.
 
 ## 📂 Data Availability
 
