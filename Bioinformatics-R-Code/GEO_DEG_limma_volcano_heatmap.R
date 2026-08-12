@@ -1,5 +1,3 @@
-setwd("C:")
-
 logfc_threshold <- 1
 adjp_threshold <- 0.05
 
@@ -9,7 +7,7 @@ library(ggrepel)
 library(pheatmap)
 library(scales)
 
-expr_file <- "merged.csv"
+expr_file <- "expr_file.csv"
 header_line <- readLines(expr_file, 1)
 sep_char <- ifelse(grepl(",", header_line), ",", "\t")
 
