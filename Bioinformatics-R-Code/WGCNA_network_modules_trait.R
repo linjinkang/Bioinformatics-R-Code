@@ -1,12 +1,10 @@
-setwd("C:")
-
 library(WGCNA)
 library(limma)
 library(ggplot2)
 library(pheatmap)
 library(reshape2)
 
-expr_file <- "merged.csv"
+expr_file <- "expr_file.csv"
 header_line <- readLines(expr_file, 1)
 sep_char <- ifelse(grepl(",", header_line), ",", "\t")
 raw_data <- read.table(expr_file, sep = sep_char, header = TRUE, check.names = FALSE, stringsAsFactors = FALSE)
@@ -64,7 +62,6 @@ plotDendroAndColors(sample_dendro2, trait_colors, groupLabels = names(trait_data
 dev.off()
 
 enableWGCNAThreads()
-
 power_vector <- 1:20
 sft_result <- pickSoftThreshold(expr_matrix, powerVector = power_vector, verbose = 5)
 optimal_power <- sft_result$powerEstimate
@@ -87,7 +84,6 @@ dev.off()
 adjacency <- adjacency(expr_matrix, power = optimal_power)
 tom <- TOMsimilarity(adjacency)
 diss_tom <- 1 - tom
-
 gene_dendro <- hclust(as.dist(diss_tom), method = "average")
 pdf("Gene_Clustering.pdf", width = 12, height = 9)
 plot(gene_dendro, xlab = "", sub = "", main = "Gene Clustering (TOM)", labels = FALSE, hang = 0.04)
@@ -133,7 +129,6 @@ pval_melt <- melt(mod_trait_p)
 heatmap_df <- merge(cor_melt, pval_melt, by = c("Var1", "Var2"))
 colnames(heatmap_df) <- c("Module", "Trait", "Correlation", "Pvalue")
 
-nature_gradient <- c("#053061", "#2166AC", "#92C5DE", "#F7F7F7", "#F4A582", "#B2182B", "#67001F")
 pdf("Module_Trait_Heatmap.pdf", width = 5, height = 4)
 ggplot(heatmap_df, aes(x = Trait, y = Module, fill = Correlation)) +
   geom_tile(color = "white") +
