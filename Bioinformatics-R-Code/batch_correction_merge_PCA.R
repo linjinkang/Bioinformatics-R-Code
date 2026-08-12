@@ -1,5 +1,3 @@
-setwd("C:")
-
 library(data.table)
 library(limma)
 library(ggplot2)
@@ -43,10 +41,10 @@ plot_pca <- function(data_matrix, batch_vector, plot_title, out_file) {
   )
   n_groups <- length(unique(batch_vector))
   palette_colors <- if (n_groups <= 8) brewer.pal(n_groups, "Set1") else colorRampPalette(brewer.pal(9, "Set1"))(n_groups)
-
+  
   x_lab <- paste0("PC1 (", round(var_explained[1] * 100, 1), "%)")
   y_lab <- paste0("PC2 (", round(var_explained[2] * 100, 1), "%)")
-
+  
   p <- ggplot(pca_df, aes(x = pc1, y = pc2, color = batch)) +
     geom_point(size = 2, alpha = 0.9) +
     stat_ellipse(aes(fill = batch), geom = "polygon", alpha = 0.14, linetype = 2, show.legend = FALSE) +
